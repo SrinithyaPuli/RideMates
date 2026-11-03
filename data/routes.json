@@ -1,0 +1,14 @@
+[
+  {"route_id": "R1", "nodes": ["A","B","C","D","E"], "should_be_valid": true},
+  {"route_id": "R2", "nodes": ["A","F","K","P"], "should_be_valid": true},
+  {"route_id": "R3", "nodes": ["C","H","M","R"], "should_be_valid": true},
+  {"route_id": "R4", "nodes": ["A","B","C","D","E","J","I","H","G","F","K","L"], "should_be_valid": true},
+  {"route_id": "R5", "nodes": ["A","B","C","D","E","J","O","T","S","R","Q","P"], "should_be_valid": true},
+  {"route_id": "R6", "nodes": ["A","F","G","H","I","J","O","N","M"], "should_be_valid": true},
+  {"route_id": "R7", "nodes": ["A","B","F","K","L","M","S","T"], "should_be_valid": true},
+  {"route_id": "BAD1", "nodes": ["A","B","C","B","D"], "should_be_valid": false},
+  {"route_id": "BAD2", "nodes": ["A","C"], "should_be_valid": false},
+  {"route_id": "BAD3", "nodes": ["A"], "should_be_valid": false},
+  {"route_id": "BAD4", "nodes": ["A","B","Z"], "should_be_valid": false},
+  {"route_id": "BAD5", "nodes": ["A","G"], "should_be_valid": false}
+]
