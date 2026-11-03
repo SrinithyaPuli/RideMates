@@ -143,3 +143,23 @@ def load_case(case_id, data_folder="data"):
 
     requests = load_requests(data_folder + "/" + case["request_file"])
     return Problem(route, case["vehicle"], requests)
+def capacity_ok(problem, accepted):
+    # True if the whole selection respects capacity on every segment.
+    # accepted: tuple of request indices, e.g. (0, 2, 5)
+    counts = problem.occupancy(accepted)
+    for c in counts:
+        if c > problem.capacity:
+            return False
+    return True
+
+
+def can_accept(problem, accepted, k):
+    # True if adding request k to the selection keeps capacity valid.
+    if k in accepted:
+        return False                      # already accepted
+
+    counts = problem.occupancy(accepted)
+    for s in problem.segments(k):         # only the segments k uses
+        if counts[s] + 1 > problem.capacity:
+            return False
+    return True

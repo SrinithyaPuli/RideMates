@@ -1,6 +1,6 @@
 # test_problem.py
 # One test file for problem.py Part A (filter) and Part B (Problem class).
-from problem import Request, Problem, filter_requests
+from problem import Request, Problem, filter_requests, capacity_ok, can_accept
 
 route = ["A", "B", "C", "D", "E"]
 requests = [
@@ -57,3 +57,22 @@ except ValueError:
 print("Part B tests passed")
 
 print("All problem tests passed")
+
+# ---------- Part C: capacity functions ----------
+# Bike example: k=0 is Q1 (A->C), k=1 is Q3 (A->B), k=2 is Q2 (B->E), k=3 is Q4 (C->E)
+assert capacity_ok(p, ()) == True            # nothing accepted
+assert capacity_ok(p, (1, 2)) == True        # Q3 + Q2, the best answer
+assert capacity_ok(p, (0, 3)) == True        # Q1 + Q4 = Rs.90, feasible
+assert capacity_ok(p, (0, 1)) == False       # Q1 + Q3 clash on segment 0
+assert capacity_ok(p, (2, 3)) == False       # Q2 + Q4 clash on segments 2, 3
+
+assert can_accept(p, (1,), 2) == True        # Q3 then Q2: fine
+assert can_accept(p, (0,), 1) == False       # Q1 then Q3: clash
+assert can_accept(p, (1,), 1) == False       # already accepted
+
+# Auto holds 3, so all four requests fit together
+auto = Problem(route, "Auto", requests)
+assert capacity_ok(auto, (0, 1, 2, 3)) == True
+assert capacity_ok(p, (0, 1, 2, 3)) == False  # but not on the Bike
+
+print("Part C tests passed")
