@@ -1,6 +1,6 @@
 # problem.py  (Part A: Request model and filter)
 # Person 1
-
+import time
 import json
 from graph import load_graph, validate_route
 
@@ -163,3 +163,39 @@ def can_accept(problem, accepted, k):
         if counts[s] + 1 > problem.capacity:
             return False
     return True
+def make_result(problem, name, accepted, nodes_explored,
+                start_time, peak_states, timed_out, extra=None):
+    # Builds the result dictionary that every algorithm must return.
+    # accepted: sorted tuple of request indices, e.g. (1, 2)
+    accepted = tuple(sorted(accepted))
+
+    accepted_ids = []
+    rejected_ids = []
+    total_fare = 0
+    for k in range(problem.m):
+        if k in accepted:
+            accepted_ids.append(problem.requests[k].id)
+            total_fare += problem.fare(k)
+        else:
+            rejected_ids.append(problem.requests[k].id)
+
+    result = {
+        "algorithm": name,
+        "accepted_ids": accepted_ids,
+        "rejected_ids": rejected_ids,
+        "invalid_ids": list(problem.invalid_ids),
+        "total_fare": total_fare,
+        "occupancy": problem.occupancy(accepted),
+        "nodes_explored": nodes_explored,
+        "time_sec": time.time() - start_time,
+        "peak_states": peak_states,
+        "timed_out": timed_out,
+        "valid": capacity_ok(problem, accepted),
+    }
+
+    # optional extra keys, such as {"cutoff": True} for DLS
+    if extra is not None:
+        for key in extra:
+            result[key] = extra[key]
+
+    return result

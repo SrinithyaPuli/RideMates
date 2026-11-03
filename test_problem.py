@@ -1,7 +1,8 @@
 # test_problem.py
 # One test file for problem.py Part A (filter) and Part B (Problem class).
-from problem import Request, Problem, filter_requests, capacity_ok, can_accept
-
+import time
+from problem import (Request, Problem, filter_requests, capacity_ok,
+                     can_accept, make_result)
 route = ["A", "B", "C", "D", "E"]
 requests = [
     Request("Q1", "A", "C", 50),
@@ -76,3 +77,41 @@ assert capacity_ok(auto, (0, 1, 2, 3)) == True
 assert capacity_ok(p, (0, 1, 2, 3)) == False  # but not on the Bike
 
 print("Part C tests passed")
+
+# ---------- Part D: make_result ----------
+res = make_result(p, "Test", (1, 2), 5, time.time(), 3, False)
+assert res["algorithm"] == "Test"
+assert res["accepted_ids"] == ["Q3", "Q2"]
+assert res["rejected_ids"] == ["Q1", "Q4"]
+assert res["invalid_ids"] == ["Q5", "Q6"]
+assert res["total_fare"] == 100
+assert res["occupancy"] == [1, 1, 1, 1]
+assert res["nodes_explored"] == 5
+assert res["peak_states"] == 3
+assert res["timed_out"] == False
+assert res["valid"] == True
+assert res["time_sec"] >= 0
+
+# a selection that breaks capacity must be flagged as not valid
+bad = make_result(p, "Bad", (0, 1), 1, time.time(), 1, False)
+assert bad["valid"] == False
+assert bad["total_fare"] == 80
+assert bad["occupancy"] == [2, 1, 0, 0]
+
+# extra keys are added
+ex = make_result(p, "DLS", (), 1, time.time(), 1, False, {"cutoff": True})
+assert ex["cutoff"] == True
+
+# edge case: zero valid requests
+zero = Problem(route, "Bike", [Request("Q1", "A", "Z", 10)])
+assert zero.m == 0
+z = make_result(zero, "Test", (), 0, time.time(), 0, False)
+assert z["accepted_ids"] == []
+assert z["rejected_ids"] == []
+assert z["invalid_ids"] == ["Q1"]
+assert z["total_fare"] == 0
+assert z["occupancy"] == [0, 0, 0, 0]
+assert z["valid"] == True
+assert z["timed_out"] == False
+
+print("Part D tests passed")
