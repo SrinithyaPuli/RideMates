@@ -2,6 +2,9 @@
 # Person 1
 
 import json
+from graph import load_graph, validate_route
+
+CAPACITY = {"Bike": 1, "Auto": 3, "Car": 4}
 
 
 def id_number(request_id):
@@ -65,3 +68,78 @@ def filter_requests(route, requests):
 
     valid.sort(key=lambda r: sort_key(route, r))
     return (valid, invalid)
+class Problem:
+    def __init__(self, route, vehicle, requests):
+        # route: list of locations, vehicle: "Bike", "Auto" or "Car"
+        # requests: list of Request objects (valid and invalid mixed)
+        if vehicle not in CAPACITY:
+            raise ValueError("Vehicle must be Bike, Auto or Car, got " +
+                             str(vehicle))
+
+        self.route = list(route)
+        self.vehicle = vehicle
+        self.capacity = CAPACITY[vehicle]
+        self.num_segments = len(self.route) - 1
+
+        # The filter runs here, so algorithms only ever see valid requests
+        valid, invalid = filter_requests(self.route, requests)
+        self.requests = valid                       # sorted, index k = position
+        self.invalid_ids = [r.id for r in invalid]
+        self.m = len(self.requests)
+
+        self.total_fare = 0
+        for r in self.requests:
+            self.total_fare += r.fare
+
+        # segment list for every request, worked out once
+        self._segments = []
+        for r in self.requests:
+            start = self.route.index(r.pickup)
+            end = self.route.index(r.dropoff)
+            self._segments.append(list(range(start, end)))
+
+    def fare(self, k):
+        return self.requests[k].fare
+
+    def segments(self, k):
+        return self._segments[k]
+
+    def occupancy(self, accepted):
+        # accepted: tuple of request indices, e.g. (0, 2, 5)
+        # returns passengers on each segment, e.g. [1, 2, 0, 1]
+        counts = [0] * self.num_segments
+        for k in accepted:
+            for s in self._segments[k]:
+                counts[s] += 1
+        return counts
+
+
+def load_case(case_id, data_folder="data"):
+    # Builds a Problem from the JSON files, using the contract formats.
+    with open(data_folder + "/testcases.json") as f:
+        cases = json.load(f)
+
+    case = None
+    for c in cases:
+        if c["case_id"] == case_id:
+            case = c
+    if case is None:
+        raise ValueError("Test case " + str(case_id) + " not found")
+
+    with open(data_folder + "/routes.json") as f:
+        routes = json.load(f)
+
+    route = None
+    for r in routes:
+        if r["route_id"] == case["route_id"]:
+            route = r["nodes"]
+    if route is None:
+        raise ValueError("Route " + str(case["route_id"]) + " not found")
+
+    graph = load_graph(data_folder + "/graph.json")
+    ok, message = validate_route(graph, route)
+    if not ok:
+        raise ValueError("Route " + case["route_id"] + " is invalid: " + message)
+
+    requests = load_requests(data_folder + "/" + case["request_file"])
+    return Problem(route, case["vehicle"], requests)
