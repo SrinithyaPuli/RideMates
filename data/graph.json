@@ -1,0 +1,58 @@
+{
+  "nodes": [
+    "A", "B", "C", "D", "E",
+    "F", "G", "H", "I", "J",
+    "K", "L", "M", "N", "O",
+    "P", "Q", "R", "S", "T"
+  ],
+  "edges": [
+    
+    {"a": "A", "b": "B", "distance": 4.0},
+    {"a": "B", "b": "C", "distance": 3.0},
+    {"a": "C", "b": "D", "distance": 5.0},
+    {"a": "D", "b": "E", "distance": 2.0},
+
+    {"a": "F", "b": "G", "distance": 4.0},
+    {"a": "G", "b": "H", "distance": 6.0},
+    {"a": "H", "b": "I", "distance": 3.0},
+    {"a": "I", "b": "J", "distance": 5.0},
+
+    {"a": "K", "b": "L", "distance": 2.0},
+    {"a": "L", "b": "M", "distance": 4.0},
+    {"a": "M", "b": "N", "distance": 3.0},
+    {"a": "N", "b": "O", "distance": 6.0},
+
+    {"a": "P", "b": "Q", "distance": 5.0},
+    {"a": "Q", "b": "R", "distance": 3.0},
+    {"a": "R", "b": "S", "distance": 4.0},
+    {"a": "S", "b": "T", "distance": 2.0},
+
+    
+    {"a": "A", "b": "F", "distance": 5.0},
+    {"a": "F", "b": "K", "distance": 3.0},
+    {"a": "K", "b": "P", "distance": 4.0},
+
+    {"a": "B", "b": "G", "distance": 2.0},
+    {"a": "G", "b": "L", "distance": 5.0},
+    {"a": "L", "b": "Q", "distance": 3.0},
+
+    {"a": "C", "b": "H", "distance": 4.0},
+    {"a": "H", "b": "M", "distance": 2.0},
+    {"a": "M", "b": "R", "distance": 6.0},
+
+    {"a": "D", "b": "I", "distance": 3.0},
+    {"a": "I", "b": "N", "distance": 5.0},
+    {"a": "N", "b": "S", "distance": 4.0},
+
+    {"a": "E", "b": "J", "distance": 6.0},
+    {"a": "J", "b": "O", "distance": 2.0},
+    {"a": "O", "b": "T", "distance": 5.0},
+
+    
+    {"a": "B", "b": "F", "distance": 5.0},
+    {"a": "D", "b": "J", "distance": 4.0},
+    {"a": "H", "b": "L", "distance": 3.0},
+    {"a": "K", "b": "Q", "distance": 6.0},
+    {"a": "M", "b": "S", "distance": 5.0}
+  ]
+}

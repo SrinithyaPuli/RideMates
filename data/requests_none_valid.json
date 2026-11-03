@@ -1,0 +1,26 @@
+[
+    {
+        "id": "Q1",
+        "pickup": "E",
+        "dropoff": "A",
+        "fare": 60
+    },
+    {
+        "id": "Q2",
+        "pickup": "A",
+        "dropoff": "Z",
+        "fare": 80
+    },
+    {
+        "id": "Q3",
+        "pickup": "Z",
+        "dropoff": "T",
+        "fare": 45
+    },
+    {
+        "id": "Q4",
+        "pickup": "D",
+        "dropoff": "B",
+        "fare": 70
+    }
+]

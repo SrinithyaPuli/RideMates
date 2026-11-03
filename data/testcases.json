@@ -1,0 +1,92 @@
+[
+    {
+        "case_id": "bike_6_1",
+        "route_id": "R1",
+        "vehicle": "Bike",
+        "request_file": "requests_6_seed1.json"
+    },
+    {
+        "case_id": "auto_6_1",
+        "route_id": "R1",
+        "vehicle": "Auto",
+        "request_file": "requests_6_seed1.json"
+    },
+    {
+        "case_id": "car_6_1",
+        "route_id": "R1",
+        "vehicle": "Car",
+        "request_file": "requests_6_seed1.json"
+    },
+    {
+        "case_id": "bike_10_1",
+        "route_id": "R4",
+        "vehicle": "Bike",
+        "request_file": "requests_10_seed1.json"
+    },
+    {
+        "case_id": "auto_10_1",
+        "route_id": "R4",
+        "vehicle": "Auto",
+        "request_file": "requests_10_seed1.json"
+    },
+    {
+        "case_id": "car_10_1",
+        "route_id": "R4",
+        "vehicle": "Car",
+        "request_file": "requests_10_seed1.json"
+    },
+    {
+        "case_id": "bike_15_1",
+        "route_id": "R5",
+        "vehicle": "Bike",
+        "request_file": "requests_15_seed1.json"
+    },
+    {
+        "case_id": "auto_15_1",
+        "route_id": "R5",
+        "vehicle": "Auto",
+        "request_file": "requests_15_seed1.json"
+    },
+    {
+        "case_id": "car_15_1",
+        "route_id": "R5",
+        "vehicle": "Car",
+        "request_file": "requests_15_seed1.json"
+    },
+    {
+        "case_id": "bike_20_1",
+        "route_id": "R6",
+        "vehicle": "Bike",
+        "request_file": "requests_20_seed1.json"
+    },
+    {
+        "case_id": "auto_20_1",
+        "route_id": "R6",
+        "vehicle": "Auto",
+        "request_file": "requests_20_seed1.json"
+    },
+    {
+        "case_id": "car_20_1",
+        "route_id": "R6",
+        "vehicle": "Car",
+        "request_file": "requests_20_seed1.json"
+    },
+    {
+        "case_id": "bike_none_1",
+        "route_id": "R1",
+        "vehicle": "Bike",
+        "request_file": "requests_none_valid.json"
+    },
+    {
+        "case_id": "auto_none_1",
+        "route_id": "R1",
+        "vehicle": "Auto",
+        "request_file": "requests_none_valid.json"
+    },
+    {
+        "case_id": "car_none_1",
+        "route_id": "R1",
+        "vehicle": "Car",
+        "request_file": "requests_none_valid.json"
+    }
+]

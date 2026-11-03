@@ -1,0 +1,140 @@
+[
+    {
+        "id": "Q1",
+        "pickup": "F",
+        "dropoff": "G",
+        "fare": 122
+    },
+    {
+        "id": "Q2",
+        "pickup": "A",
+        "dropoff": "J",
+        "fare": 132
+    },
+    {
+        "id": "Q3",
+        "pickup": "G",
+        "dropoff": "I",
+        "fare": 59
+    },
+    {
+        "id": "Q4",
+        "pickup": "A",
+        "dropoff": "M",
+        "fare": 105
+    },
+    {
+        "id": "Q5",
+        "pickup": "J",
+        "dropoff": "N",
+        "fare": 150
+    },
+    {
+        "id": "Q6",
+        "pickup": "H",
+        "dropoff": "N",
+        "fare": 43
+    },
+    {
+        "id": "Q7",
+        "pickup": "F",
+        "dropoff": "M",
+        "fare": 145
+    },
+    {
+        "id": "Q8",
+        "pickup": "G",
+        "dropoff": "H",
+        "fare": 70
+    },
+    {
+        "id": "Q9",
+        "pickup": "G",
+        "dropoff": "M",
+        "fare": 33
+    },
+    {
+        "id": "Q10",
+        "pickup": "F",
+        "dropoff": "O",
+        "fare": 32
+    },
+    {
+        "id": "Q11",
+        "pickup": "H",
+        "dropoff": "M",
+        "fare": 33
+    },
+    {
+        "id": "Q12",
+        "pickup": "A",
+        "dropoff": "N",
+        "fare": 113
+    },
+    {
+        "id": "Q13",
+        "pickup": "A",
+        "dropoff": "I",
+        "fare": 99
+    },
+    {
+        "id": "Q14",
+        "pickup": "I",
+        "dropoff": "N",
+        "fare": 31
+    },
+    {
+        "id": "Q15",
+        "pickup": "A",
+        "dropoff": "F",
+        "fare": 150
+    },
+    {
+        "id": "Q16",
+        "pickup": "I",
+        "dropoff": "J",
+        "fare": 142
+    },
+    {
+        "id": "Q17",
+        "pickup": "F",
+        "dropoff": "N",
+        "fare": 78
+    },
+    {
+        "id": "Q18",
+        "pickup": "H",
+        "dropoff": "I",
+        "fare": 117
+    },
+    {
+        "id": "Q19",
+        "pickup": "I",
+        "dropoff": "M",
+        "fare": 57
+    },
+    {
+        "id": "Q20",
+        "pickup": "N",
+        "dropoff": "M",
+        "fare": 84
+    },
+    {
+        "id": "Q21",
+        "pickup": "B",
+        "dropoff": "A",
+        "fare": 97
+    },
+    {
+        "id": "Q22",
+        "pickup": "A",
+        "dropoff": "E",
+        "fare": 127
+    },
+    {
+        "id": "Q23",
+        "pickup": "G",
+        "dropoff": "F",
+        "fare": 86
+    }
+]

@@ -1,0 +1,80 @@
+[
+    {
+        "id": "Q1",
+        "pickup": "B",
+        "dropoff": "G",
+        "fare": 130
+    },
+    {
+        "id": "Q2",
+        "pickup": "A",
+        "dropoff": "F",
+        "fare": 56
+    },
+    {
+        "id": "Q3",
+        "pickup": "D",
+        "dropoff": "I",
+        "fare": 42
+    },
+    {
+        "id": "Q4",
+        "pickup": "A",
+        "dropoff": "G",
+        "fare": 92
+    },
+    {
+        "id": "Q5",
+        "pickup": "D",
+        "dropoff": "J",
+        "fare": 33
+    },
+    {
+        "id": "Q6",
+        "pickup": "J",
+        "dropoff": "F",
+        "fare": 144
+    },
+    {
+        "id": "Q7",
+        "pickup": "C",
+        "dropoff": "K",
+        "fare": 136
+    },
+    {
+        "id": "Q8",
+        "pickup": "D",
+        "dropoff": "E",
+        "fare": 79
+    },
+    {
+        "id": "Q9",
+        "pickup": "E",
+        "dropoff": "G",
+        "fare": 85
+    },
+    {
+        "id": "Q10",
+        "pickup": "C",
+        "dropoff": "I",
+        "fare": 107
+    },
+    {
+        "id": "Q11",
+        "pickup": "M",
+        "dropoff": "A",
+        "fare": 119
+    },
+    {
+        "id": "Q12",
+        "pickup": "A",
+        "dropoff": "T",
+        "fare": 64
+    },
+    {
+        "id": "Q13",
+        "pickup": "G",
+        "dropoff": "B",
+        "fare": 122
+    }
+]
