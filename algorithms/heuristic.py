@@ -32,3 +32,6 @@ def h_main(problem, k, accepted):
     if len(costs) == 0:
         return 0
     return max(costs)
+
+def heuristic(problem, k, accepted):
+    return h_main(problem, k, accepted)
