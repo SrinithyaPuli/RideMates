@@ -133,3 +133,4 @@ def solve(problem, time_limit=30):
         peak_states,
         timed_out
     )
+solve_reference=solve
